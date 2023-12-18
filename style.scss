@@ -1,0 +1,252 @@
+@import 'vars';
+@import 'mixins';
+@import 'globals';
+
+.main-header {
+    background-image: url(img/coffee-slajd-1.png);
+    background-position: center;
+    background-size: cover;
+    @include flex($justify: center);
+    .hgroup {
+        padding: 300px 0;
+        color: $white;
+        @media(max-width: 767px) {
+            padding: 250px 0 150px 0;
+        }
+        h1 {
+            color: $accents;
+        }
+        p {
+            margin: 40px 0;
+        }
+    }
+}
+.ponuda {
+    h2 {
+        color: $accents;
+        & + p {
+            padding: 30px 0 70px 0;
+        }
+    }
+    article {
+        @include flex;
+        div {
+            flex: 0 0 32%;
+            @media(max-width: 767px) {
+                flex: 0 0 100%;
+                margin-bottom: 30px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            h3 {
+                padding: 45px 0 15px 0;
+            }
+        }
+    }
+} 
+
+// meni
+.meni {
+    background: $black;
+    color: $accents;
+    @include flex;
+    @media(max-width: 767px) {
+        padding-top: 50px;
+    }
+    div {
+        &:first-child {
+            flex: 0 0 60%;
+            @media(max-width: 767px) {
+                flex: 0 0 100%;
+            }
+            .row {
+                padding: 100px;
+                @media(max-width: 767px) {
+                    padding: 50px 10px;
+                }
+                .wrapper {
+                    @include flex;
+                    .menu-item {
+                        @include flex;
+                        flex: 0 0 50%;
+                        margin-bottom: 30px;
+                        @media(max-width: 767px) {
+                            flex: 0 0 100%;
+                        }
+                        .img {
+                            flex: 0 0 40%;
+                            img {
+                                width: 100px;
+                            }
+                        }
+                        .text {
+                            flex: 0 0 60%;
+                            p {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &:last-child {
+            flex: 0 0 40%;
+            @media(max-width: 767px) {
+                flex: 0 0 100%;
+            }
+        }
+    }
+}
+
+// usluge
+.usluge {
+    h2 {
+        margin-bottom: 25px;
+        & + p {
+            margin-bottom: 90px;
+        }
+    }
+    article {
+        @include flex($align: stretch);
+        div {
+            flex: 0 0 50%;
+            @media(max-width: 767px) {
+                flex: 0 0 100%;
+            }
+            &:last-child {
+                background: $bg;
+                padding: 110px 50px 50px 50px;
+                @media(max-width: 767px) {
+                    padding: 50px;
+                }
+                h3 {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+// poruci
+.poruci {
+    background: linear-gradient(to right, rgba($text,.9), rgba($bg,.99)), url(img/poruci.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 250px 0;
+    @media(max-width: 767px) {
+        padding: 150px 0;
+    }
+    p {
+        width: 50%;
+        color: $white;
+        padding: 10px 0 35px 0;
+        @media(max-width: 767px) {
+            width: 80%;
+        }
+    }
+}
+
+// kontakt
+.kontakt {
+    h2 {
+        margin-bottom: 30px;
+        color: $text;
+    }
+    div {
+        @include flex;
+        ul {
+            flex: 0 0 30%;
+            line-height: 36px;
+            @media(max-width: 767px) {
+                flex: 0 0 100%;
+            }
+            i {
+                color: $accents;
+                font-size: 25px;
+                margin-right: 16px;
+            }
+        }
+        form {
+            flex: 0 0 70%;
+            @include flex;
+            @media(max-width: 767px) {
+                flex: 0 0 100%;
+                margin-top: 30px;
+            }
+            input {
+                flex: 0 0 49%;
+                padding: 15px;
+                border: 1px solid $borders;
+            }
+            textarea {
+                flex: 0 0 100%;
+                padding: 15px;
+                border: 1px solid $borders;
+                margin: 30px 0;
+            }
+            button {
+                border: none;
+                cursor: pointer;
+                padding: 15px 50px;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+// kontakt
+footer {
+    background: $text;
+    p {
+        color: $white;
+        padding: 30px 0;
+    }
+    img {
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+    }
+    input {
+        width: 376px;
+        padding: 10px;
+        @media(max-width: 767px) {
+            margin-bottom: 30px;
+        }
+    }
+    .btn {
+        border-radius: 0;
+        background: $black;
+        color: $accents;
+    }
+}
+
+// bottom bar
+.bottom-bar {
+    background: $accents;
+    padding: 25px;
+    a {
+        color: $text;
+    }
+}
+
+// dogadjaji
+.dogadjaji {
+    @include flex;
+    div {
+        flex: 0 0 32%;
+        border-radius: 20px;
+        box-shadow: 0px 3px 6px lightgray;
+        overflow: hidden;
+        @media(max-width: 767px) {
+            flex: 0 0 100%;
+            
+        }
+        div {
+            padding: 25px;
+        }
+    }
+}
